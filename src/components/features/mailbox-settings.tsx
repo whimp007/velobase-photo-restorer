@@ -34,13 +34,13 @@ export function MailboxSettings() {
           event.preventDefault();
           const data = new FormData(event.currentTarget);
           save.mutate({
-            address: String(data.get("address")),
-            password: String(data.get("password")) || undefined,
-            imapHost: String(data.get("imapHost")),
+            address: String(data.get("address") as string),
+            password: String(data.get("password") as string) || undefined,
+            imapHost: String(data.get("imapHost") as string),
             imapPort: Number(data.get("imapPort")),
-            smtpHost: String(data.get("smtpHost")),
+            smtpHost: String(data.get("smtpHost") as string),
             smtpPort: Number(data.get("smtpPort")),
-            from: String(data.get("from")) || undefined,
+            from: String(data.get("from") as string) || undefined,
           });
         }}
       >

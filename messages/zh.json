@@ -135,10 +135,108 @@
   },
   "landing": {
     "hero": {
-      "titleLine1": "Build Your AI App",
-      "titleLine2": "In Record Time",
-      "subtitle": "A production-ready AI SaaS framework with auth, billing, payments, and AI chat built in.",
-      "subtitleAccent": "Focus on your core feature. We handle the rest."
+      "badge": "AI 老照片修复",
+      "titleLine1": "让泛黄的老照片",
+      "titleLine2": "重现昔日光彩",
+      "subtitle": "AI 智能去除划痕、污渍与折痕，提升模糊照片的画质，并为黑白照片还原真实色彩。",
+      "ctaPrimary": "免费开始修复",
+      "ctaSecondary": "了解更多",
+      "before": "修复前",
+      "after": "修复后"
+    },
+    "features": {
+      "eyebrow": "核心能力",
+      "title": "让老照片",
+      "titleAccent": "焕然一新",
+      "subtitle": "秒级完成专业级修复，无需任何设计技能。",
+      "items": {
+        "restore": {
+          "title": "AI 智能修复",
+          "desc": "自动识别并修复照片中的划痕、污渍、折痕等物理损伤。"
+        },
+        "enhance": {
+          "title": "画质增强",
+          "desc": "将低分辨率、模糊的照片提升为清晰的高清画质。"
+        },
+        "colorize": {
+          "title": "色彩恢复",
+          "desc": "为黑白褪色照片智能上色，还原真实色彩。"
+        },
+        "batch": {
+          "title": "批量处理",
+          "desc": "一次上传多张照片，批量完成修复，节省时间。"
+        },
+        "compare": {
+          "title": "修复预览对比",
+          "desc": "拖动滑块，直观对比修复前后的效果。"
+        }
+      }
+    },
+    "cta": {
+      "title": "准备好让回忆重获新生了吗？",
+      "subtitle": "免费体验 AI 修复，满意后再付费下载高清成果。",
+      "button": "立即修复第一张照片"
+    }
+  },
+  "restore": {
+    "badge": "AI 老照片修复",
+    "title": "修复工作室",
+    "subtitle": "上传照片、选择修复模式，拖动滑块对比修复前后效果。",
+    "uploadTitle": "点击或拖拽上传照片",
+    "uploadHint": "支持 JPG / PNG / WebP，单张不超过 15MB",
+    "dragHint": "松开即可开始修复",
+    "invalidType": "请上传图片文件",
+    "tooLarge": "图片过大，请上传小于 15MB 的图片",
+    "readFailed": "图片读取失败，请重试",
+    "processing": "AI 正在修复中…",
+    "before": "修复前",
+    "after": "修复后",
+    "sliderLabel": "对比滑块",
+    "download": "下载高清结果",
+    "saved": "已保存到你的修复历史",
+    "notSaved": "登录后自动保存修复历史",
+    "modeTitle": "选择修复模式",
+    "modes": {
+      "restore": { "title": "划痕修复", "desc": "去除划痕、污渍与折痕" },
+      "enhance": { "title": "画质增强", "desc": "提升清晰度与细节" },
+      "colorize": { "title": "智能上色", "desc": "黑白照片还原真实色彩" },
+      "restore-colorize": { "title": "全面修复", "desc": "去损伤 + 增强 + 上色一步完成" }
+    },
+    "restoreButton": "开始 AI 修复",
+    "changePhoto": "更换照片",
+    "privacyNote": "演示模式使用本地 sharp 引擎处理，照片仅用于本次修复并自动清理。真实 AI 模型与计费将在完整版中启用。",
+    "failed": "修复失败，请稍后重试",
+    "history": {
+      "badge": "修复历史",
+      "title": "我的修复历史",
+      "subtitle": "回顾之前修复过的照片，随时下载高清成果。",
+      "empty": "还没有修复记录，去修复第一张照片吧",
+      "goRestore": "去修复照片",
+      "download": "下载",
+      "loadMore": "加载更多",
+      "signInTitle": "登录后查看修复历史",
+      "signInDesc": "登录后，你的每一次修复都会自动保存到这里。",
+      "resultAlt": "修复结果预览",
+      "statuses": {
+        "done": "已完成",
+        "failed": "失败",
+        "processing": "处理中"
+      }
+    },
+    "batch": {
+      "title": "批量修复",
+      "subtitle": "一次上传多张照片，批量完成修复，最多 {max} 张",
+      "addPhotos": "添加照片",
+      "restoreAll": "批量修复",
+      "processing": "修复中 {current}/{total}",
+      "maxReached": "一次最多上传 {max} 张照片",
+      "queued": "已添加 {count} 张",
+      "doneCount": "完成 {count} 张",
+      "failedCount": "失败 {count} 张",
+      "failedItem": "失败",
+      "remove": "移除",
+      "clear": "清空列表",
+      "done": "批量修复完成"
     }
   },
   "dashboard": {

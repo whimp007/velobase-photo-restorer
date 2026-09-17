@@ -248,6 +248,7 @@ model User {
   touchSchedules          TouchSchedule[]
   supportTickets          SupportTicket[]
   notificationPreferences UserNotificationPreference[]
+  restorations            Restoration[]
 
   @@index([createdAt])
   @@index([deviceKeyAtSignup, createdAt])
@@ -1628,4 +1629,42 @@ model SupportReply {
   @@index([status, createdAt])
   @@index([ticketId, createdAt])
   @@map("support_replies")
+}
+
+// ==============================================================
+// Photo Restorer product entity
+// ==============================================================
+
+enum RestorationMode {
+  RESTORE
+  ENHANCE
+  COLORIZE
+  RESTORE_COLORIZE
+}
+
+enum RestorationStatus {
+  PROCESSING
+  DONE
+  FAILED
+}
+
+model Restoration {
+  id            String            @id @default(cuid())
+  userId        String            @map("user_id")
+  mode          RestorationMode
+  status        RestorationStatus @default(PROCESSING)
+  batchId       String?           @map("batch_id")
+  originalKey   String?           @map("original_key")
+  originalUrl   String?           @map("original_url")
+  restoredKey   String?           @map("restored_key")
+  restoredUrl   String?           @map("restored_url")
+  error         String?           @db.Text
+  createdAt     DateTime          @default(now()) @map("created_at")
+  updatedAt     DateTime          @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@index([batchId])
+  @@map("restorations")
 }

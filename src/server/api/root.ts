@@ -21,6 +21,7 @@ import { githubRouter } from "@/server/api/routers/github";
 import { integrationDiagnosticsRouter } from "@/server/api/routers/integration-diagnostics";
 import { affiliateRouter } from "@/server/api/routers/affiliate";
 import { telegramRouter } from "@/server/telegram/router";
+import { restorationRouter } from "@/modules/photo-restorer/server/router";
 import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
 
 /**
@@ -61,6 +62,9 @@ export const appRouter = createTRPCRouter({
 
   // Telegram module
   telegram: telegramRouter,
+
+  // Photo Restorer module
+  restoration: restorationRouter,
 });
 
 export type AppRouter = typeof appRouter;

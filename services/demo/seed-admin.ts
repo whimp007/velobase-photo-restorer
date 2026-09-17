@@ -246,8 +246,11 @@ async function main() {
     })) })).count;
     return counts;
   }, { timeout: 60000 });
+  // eslint-disable-next-line no-console
   console.log("Admin demo data inserted:", JSON.stringify(inserted));
+  // eslint-disable-next-line no-console
   console.log("Open http://localhost:3003/admin/users — search demo.user01@example.test for a populated detail page.");
+  // eslint-disable-next-line no-console
   console.log("Credit balances use the external Velobase ledger and are not included in this database seed.");
 }
 

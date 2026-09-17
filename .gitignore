@@ -52,11 +52,15 @@ veo-test-*.mp4
 veo-ecommerce-test-*.mp4
 
 logs/*
+*.log
 
 k8s.yaml
 KNOWN_ISSUES.md
 
 # cloud architecture docs
 docs/cloud/
+
+# filesystem storage root (runtime uploads)
+public/storage
 
 # Independently generated core Prisma client and small host build outputs

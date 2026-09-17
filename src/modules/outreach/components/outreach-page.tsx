@@ -108,8 +108,8 @@ export function OutreachPage() {
             event.preventDefault();
             const data = new FormData(event.currentTarget);
             saveScene.mutate({
-              key: String(data.get("key")),
-              name: String(data.get("name")),
+              key: String(data.get("key") as string),
+              name: String(data.get("name") as string),
               description: "",
               isActive: data.get("active") === "on",
             });
@@ -139,9 +139,9 @@ export function OutreachPage() {
               const data = new FormData(event.currentTarget);
               saveTemplate.mutate({
                 sceneKey: scene,
-                name: String(data.get("name")),
-                subject: String(data.get("subject")),
-                text: String(data.get("text")),
+                name: String(data.get("name") as string),
+                subject: String(data.get("subject") as string),
+                text: String(data.get("text") as string),
               });
             }}
           >
@@ -181,15 +181,15 @@ export function OutreachPage() {
               try {
                 const variables = z
                   .record(z.string())
-                  .parse(JSON.parse(String(data.get("variables") || "{}")));
+                  .parse(JSON.parse(String((data.get("variables") as string) || "{}")));
                 setFormError(undefined);
                 schedule.mutate({
                   sceneKey: scene,
-                  templateId: String(data.get("templateId")),
-                  recipientId: String(data.get("recipientId")),
+                  templateId: String(data.get("templateId") as string),
+                  recipientId: String(data.get("recipientId") as string),
                   requestId,
                   scheduledAt: new Date(
-                    String(data.get("scheduledAt")),
+                    String(data.get("scheduledAt") as string),
                   ).toISOString(),
                   variables,
                 });

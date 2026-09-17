@@ -38,7 +38,6 @@ async function openInbox(config: MailboxConfig) {
     tlsOptions: { rejectUnauthorized: true },
     connTimeout: 15000,
     authTimeout: 15000,
-    socketTimeout: 30000,
   });
   const box = await new Promise<Imap.Box>((resolve, reject) => {
     connection.once("error", reject);

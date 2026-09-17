@@ -135,10 +135,108 @@
   },
   "landing": {
     "hero": {
-      "titleLine1": "Open-Source AI SaaS",
-      "titleLine2": "Boilerplate",
-      "subtitle": "A free framework with auth, billing, credits, payments, AI chat, workers, attribution, and anti-abuse built in.",
-      "subtitleAccent": "Bring your AI workflow. Keep the SaaS infrastructure."
+      "badge": "AI Photo Restoration",
+      "titleLine1": "Bring faded memories",
+      "titleLine2": "back to life",
+      "subtitle": "AI removes scratches, stains and creases, sharpens blurry photos, and adds true-to-life color to black & white pictures.",
+      "ctaPrimary": "Start restoring for free",
+      "ctaSecondary": "Learn more",
+      "before": "Before",
+      "after": "After"
+    },
+    "features": {
+      "eyebrow": "Core Capabilities",
+      "title": "Everything your old photos",
+      "titleAccent": "need to look new again.",
+      "subtitle": "Professional-grade restoration in seconds — no design skills required.",
+      "items": {
+        "restore": {
+          "title": "AI Repair",
+          "desc": "Automatically detects and removes scratches, stains, creases and other physical damage."
+        },
+        "enhance": {
+          "title": "Quality Boost",
+          "desc": "Turns low-resolution, blurry photos into sharp high-definition images."
+        },
+        "colorize": {
+          "title": "Color Restoration",
+          "desc": "Adds realistic color to black & white and faded photos."
+        },
+        "batch": {
+          "title": "Batch Processing",
+          "desc": "Upload many photos at once and restore them all in one go."
+        },
+        "compare": {
+          "title": "Before / After",
+          "desc": "Drag a slider to compare the result with the original, side by side."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to bring your memories back?",
+      "subtitle": "Try AI restoration for free, and only pay when you love the result.",
+      "button": "Restore your first photo"
+    }
+  },
+  "restore": {
+    "badge": "AI Photo Restoration",
+    "title": "Restoration Studio",
+    "subtitle": "Upload a photo, pick a mode, then drag the slider to compare before and after.",
+    "uploadTitle": "Click or drop a photo here",
+    "uploadHint": "JPG / PNG / WebP up to 15MB",
+    "dragHint": "Drop to load — then hit Restore",
+    "invalidType": "Please upload an image file",
+    "tooLarge": "Image is too large (max 15MB)",
+    "readFailed": "Could not read the image. Please try again.",
+    "processing": "Restoring with AI…",
+    "before": "Before",
+    "after": "After",
+    "sliderLabel": "Comparison slider",
+    "download": "Download HD result",
+    "saved": "Saved to your restoration history",
+    "notSaved": "Sign in to keep a restoration history",
+    "modeTitle": "Restoration mode",
+    "modes": {
+      "restore": { "title": "Scratch Repair", "desc": "Removes scratches, stains & creases" },
+      "enhance": { "title": "Quality Boost", "desc": "Sharper details & clearer faces" },
+      "colorize": { "title": "Colorize", "desc": "Brings true color to B&W photos" },
+      "restore-colorize": { "title": "Full Restore", "desc": "Repair + enhance + color in one pass" }
+    },
+    "restoreButton": "Start AI restoration",
+    "changePhoto": "Change photo",
+    "privacyNote": "Demo mode runs a local sharp engine — your photo is processed in place and not used for training. Real AI providers and billing will appear here in the full version.",
+    "failed": "Restoration failed. Please try again.",
+    "history": {
+      "badge": "History",
+      "title": "My restoration history",
+      "subtitle": "Review your restored photos and download HD results anytime.",
+      "empty": "No restorations yet — restore your first photo",
+      "goRestore": "Restore a photo",
+      "download": "Download",
+      "loadMore": "Load more",
+      "signInTitle": "Sign in to see your history",
+      "signInDesc": "Every restoration is saved here automatically once you sign in.",
+      "resultAlt": "Restored result preview",
+      "statuses": {
+        "done": "Done",
+        "failed": "Failed",
+        "processing": "Processing"
+      }
+    },
+    "batch": {
+      "title": "Batch restore",
+      "subtitle": "Upload multiple photos and restore them in one go (up to {max})",
+      "addPhotos": "Add photos",
+      "restoreAll": "Restore all",
+      "processing": "Restoring {current}/{total}",
+      "maxReached": "You can restore up to {max} photos at once",
+      "queued": "{count} photos added",
+      "doneCount": "{count} done",
+      "failedCount": "{count} failed",
+      "failedItem": "Failed",
+      "remove": "Remove",
+      "clear": "Clear list",
+      "done": "Batch restoration complete"
     }
   },
   "dashboard": {

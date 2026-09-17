@@ -1,83 +1,71 @@
 "use client";
 
-import { Sparkles, Zap, Lock, CreditCard } from "lucide-react";
+import { useTranslations } from "next-intl";
+import {
+  Wand2,
+  SlidersHorizontal,
+  Palette,
+  Layers,
+  Eye,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const features = [
-  {
-    icon: Sparkles,
-    title: "AI-First Architecture",
-    description: "Multi-provider AI SDK with OpenAI, Anthropic, Google Gemini, and more — ready out of the box.",
-    color: "text-blue-500",
-  },
-  {
-    icon: Zap,
-    title: "Ship Fast",
-    description: "Auth, billing, payments, background jobs, and email — all pre-wired so you can focus on your core feature.",
-    color: "text-purple-500",
-  },
-  {
-    icon: Lock,
-    title: "Production Ready",
-    description: "Rate limiting, abuse prevention, analytics, and admin dashboard included from day one.",
-    color: "text-emerald-500",
-  },
-  {
-    icon: CreditCard,
-    title: "Flexible Billing",
-    description: "Stripe, Airwallex, crypto payments, and a credit-based system with subscriptions and promo codes.",
-    color: "text-orange-500",
-  },
+  { icon: Wand2, color: "text-blue-500", key: "restore" },
+  { icon: SlidersHorizontal, color: "text-purple-500", key: "enhance" },
+  { icon: Palette, color: "text-amber-500", key: "colorize" },
+  { icon: Layers, color: "text-emerald-500", key: "batch" },
+  { icon: Eye, color: "text-rose-500", key: "compare" },
 ];
 
 export function Features() {
-  return (
-    <section className="w-full py-32 px-6 relative overflow-hidden bg-background">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none mix-blend-screen" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/5 blur-[100px] rounded-full pointer-events-none mix-blend-screen" />
+  const t = useTranslations("landing");
 
-      <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
+  return (
+    <section id="features" className="relative w-full overflow-hidden bg-background px-6 py-32">
+      <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-blue-500/5 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 h-[500px] w-[500px] rounded-full bg-purple-500/5 blur-[100px] pointer-events-none" />
+
+      <div className="mx-auto max-w-[1400px]">
+        <div className="mb-24 flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <h2 className="text-sm font-medium text-blue-500 tracking-widest uppercase mb-6">
-              Framework Features
+            <h2 className="mb-6 text-sm font-medium uppercase tracking-widest text-blue-500">
+              {t("features.eyebrow")}
             </h2>
-            <h3 className="text-4xl md:text-6xl font-medium tracking-tight text-foreground leading-[1.1]">
-              Everything you need <br/>
-              <span className="text-muted-foreground">to launch your AI SaaS.</span>
+            <h3 className="text-4xl font-medium leading-[1.1] tracking-tight text-foreground md:text-6xl">
+              {t("features.title")}
+              <br />
+              <span className="text-muted-foreground">{t("features.titleAccent")}</span>
             </h3>
           </div>
-          
-          <p className="text-lg text-muted-foreground max-w-sm leading-relaxed font-light">
-            A full-stack Next.js framework with all the infrastructure a solo developer needs to build, launch, and scale an AI product.
+
+          <p className="max-w-sm font-light leading-relaxed text-lg text-muted-foreground">
+            {t("features.subtitle")}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="group flex flex-col items-start"
-            >
-              <div className="w-full h-[1px] bg-border/50 mb-8 relative overflow-hidden">
-                <div className={cn(
-                  "absolute inset-0 w-full h-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out bg-foreground",
-                )} />
+        <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-5">
+          {features.map(({ icon: Icon, color, key }, index) => (
+            <div key={index} className="group flex flex-col items-start">
+              <div className="relative mb-8 h-[1px] w-full overflow-hidden bg-border/50">
+                <div className="absolute inset-0 h-full w-full -translate-x-full transform bg-foreground transition-transform duration-700 ease-out group-hover:translate-x-0" />
               </div>
 
-              <div className={cn(
-                "mb-6 p-3 -ml-3 rounded-full bg-transparent group-hover:bg-accent/50 transition-colors duration-300",
-                feature.color
-              )}>
-                <feature.icon className="w-6 h-6" strokeWidth={1.5} />
+              <div
+                className={cn(
+                  "mb-6 -ml-3 rounded-full p-3 bg-transparent transition-colors duration-300 group-hover:bg-accent/50",
+                  color,
+                )}
+              >
+                <Icon className="h-6 w-6" strokeWidth={1.5} />
               </div>
 
-              <h4 className="text-xl font-medium mb-3 text-foreground tracking-tight group-hover:translate-x-1 transition-transform duration-300">
-                {feature.title}
+              <h4 className="mb-3 text-xl font-medium tracking-tight text-foreground transition-transform duration-300 group-hover:translate-x-1">
+                {t(`features.items.${key}.title`)}
               </h4>
-              
-              <p className="text-muted-foreground leading-relaxed font-light text-base">
-                {feature.description}
+
+              <p className="text-base font-light leading-relaxed text-muted-foreground">
+                {t(`features.items.${key}.desc`)}
               </p>
             </div>
           ))}

@@ -134,7 +134,9 @@ export async function chargeDirectly(
           gateway: "STRIPE",
           status: "SUCCEEDED",
           gatewayTransactionId: paymentIntent.id,
-          rawData: JSON.parse(JSON.stringify(paymentIntent)),
+          rawData: JSON.parse(
+            JSON.stringify(paymentIntent),
+          ) as Prisma.InputJsonValue,
         });
         if (!recorded.applied)
           return { success: true, orderId: order.id, paymentId: payment.id };
